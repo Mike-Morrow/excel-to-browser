@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<form id='myform' method="POST" action="/submit">
+<table contenteditable = True>
+  <tr>
+    <th id='cell_content'>
+    
+    </th>
+  </tr>
+</table>
+<input id='myinput' type="hidden" name="table_field" value="we will set this with jquery">
+<input type="submit" value="Submit" />
+</form>
+
+
+<script type="text/javascript">
+$('#myform').submit(function() {
+  $('#myinput').val($('#cell_content').text());
+});
+</script>
+
+
+
+
+
+</body>
+</html>
